@@ -16,7 +16,14 @@ var listingSchema = new Schema({
    See https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
 */
 listingSchema.pre('save', function(next) {
-  /* your code here */
+  code : String;
+  name : String;
+  coordinates: {
+    latitude : Number; 
+    longitude : Number;
+  }
+  address : String;
+
 });
 
 /* Use your schema to instantiate a Mongoose model */
