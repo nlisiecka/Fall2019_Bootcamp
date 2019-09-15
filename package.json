@@ -19,6 +19,7 @@
   "homepage": "https://github.com/nlisiecka/Fall2019_Bootcamp#readme",
   "dependencies": {
     "mongoose": "^5.7.1",
+    "request": "^2.88.0",
     "should": "^13.2.3"
   }
 }

@@ -9,13 +9,6 @@ var mongoose = require('mongoose'),
 var listingSchema = new Schema({
   /* Your code for a schema here */ 
   //Check out - https://mongoosejs.com/docs/guide.html
-
-});
-
-/* Create a 'pre' function that adds the updated_at (and created_at if not already there) property 
-   See https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
-*/
-listingSchema.pre('save', function(next) {
   code : String;
   name : String;
   coordinates: {
@@ -23,6 +16,14 @@ listingSchema.pre('save', function(next) {
     longitude : Number;
   }
   address : String;
+
+});
+
+/* Create a 'pre' function that adds the updated_at (and created_at if not already there) property 
+   See https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
+*/
+listingSchema.pre('save', function(next) {
+
 
 });
 
