@@ -9,21 +9,35 @@ var mongoose = require('mongoose'),
 var listingSchema = new Schema({
   /* Your code for a schema here */ 
   //Check out - https://mongoosejs.com/docs/guide.html
-  code : String;
-  name : String;
+  code : {
+    required : true,
+    unique : true,
+    type : String,
+  },
+  name : {
+    required : true,
+    type : String,
+  },
   coordinates: {
-    latitude : Number; 
-    longitude : Number;
-  }
-  address : String;
+    latitude : Number, 
+    longitude : Number
+  },
+  address : String,
+  updated_at : Date,
+  created_at : Date
 
 });
 
 /* Create a 'pre' function that adds the updated_at (and created_at if not already there) property 
    See https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
 */
+/* from : https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications*/
 listingSchema.pre('save', function(next) {
-
+    var currentDate = new Date();
+    this.updated_at = currentDate;
+    if (!this.created_at)
+      this.created_at = currentDate;
+    next();
 
 });
 
