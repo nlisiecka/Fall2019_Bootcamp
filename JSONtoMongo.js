@@ -15,8 +15,7 @@ var fs = require('fs'),
 //see https://mongoosejs.com/docs/connections.html
 //See https://docs.atlas.mongodb.com/driver-connection/
 
-mongoose.connect('mongodb+srv://user1:makowa1@cluster0-px6ag.mongodb.net/test?retryWrites=true&w=majority');
-
+mongoose.connect(config.db.uri);
 /* 
   Instantiate a mongoose model for each listing object in the JSON file, 
   and then save it to your Mongo database 

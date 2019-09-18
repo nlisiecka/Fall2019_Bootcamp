@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
     Listing = require('./ListingSchema.js'), 
     config = require('./config')
 /* Connect to your database using mongoose - remember to keep your key secret*/
-mongoose.connect('mongodb+srv://user1:makowa1@cluster0-px6ag.mongodb.net/test?retryWrites=true&w=majority')
+mongoose.connect(config.db.uri);
 /* Fill out these functions using Mongoose queries*/
 //Check out - https://mongoosejs.com/docs/queries.html
 
